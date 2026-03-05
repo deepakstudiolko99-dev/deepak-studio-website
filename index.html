@@ -48,6 +48,60 @@ footer{background:#d6b37a;color:#fff;text-align:center;padding:25px}
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px 18px;border-radius:50%;font-size:22px;text-decoration:none}
 @media(max-width:768px){header h1{font-size:2.5rem}}
 </style>
+<style>
+:root {
+  --olive-green: #556b2f;
+  --dark-olive: #3d4f1c;
+  --light-olive: #f5f7ef;
+  --gold: #c6a75e;
+  --dark-gold: #a8893f;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: var(--dark-olive);
+  font-weight: 600;
+}
+
+h2 span, h3 span {
+  color: var(--gold);
+}
+
+.btn {
+  background: linear-gradient(135deg, var(--olive-green), var(--gold));
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--dark-olive), var(--dark-gold));
+  transform: translateY(-3px);
+}
+
+.btn:hover {
+  background-color: #556b2f;
+}
+
+section:nth-child(even) {
+  background-color: var(--light-olive);
+}
+
+.navbar, header {
+  background: linear-gradient(90deg, var(--dark-olive), var(--gold));
+  color: #fff;
+}
+</style>
 </head>
 <body>
 
@@ -62,7 +116,7 @@ footer{background:#d6b37a;color:#fff;text-align:center;padding:25px}
 
 <header>
 <video autoplay muted loop>
-<source src="Hero.mp4 type="video/mp4">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
 </video>
 <div>
 <h1>Deepak Studio</h1>
@@ -91,9 +145,10 @@ footer{background:#d6b37a;color:#fff;text-align:center;padding:25px}
 
 <section class="gallery">
 <h2>Wedding Gallery</h2>
-<div class="gallery-grid"><img src="wedding1">
-<img src="wedding2">
-<img src="wedding3">
+<div class="gallery-grid">
+<img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
+<img src="https://images.unsplash.com/photo-1529636798458-92182e662485">
 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
 </div>
 </section>
@@ -214,6 +269,197 @@ footer{background:#d6b37a;color:#fff;text-align:center;padding:25px}
 </footer>
 
 <a href="https://wa.me/918081721313" class="whatsapp">💬</a>
+
+
+<!-- Hero Video Section -->
+<section id="hero-video" style="position:relative;height:90vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:white">
+  <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div style="position:relative;z-index:2;background:rgba(0,0,0,0.35);padding:40px;border-radius:10px">
+    <h1 style="font-size:48px;margin-bottom:10px">Deepak Studio</h1>
+    <p style="font-size:20px">Photographing your moments forever</p>
+  </div>
+</section>
+
+<!-- Lightbox Gallery Script -->
+<script>
+const galleryImages = document.querySelectorAll('#gallery img');
+
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+lightbox.style.position = 'fixed';
+lightbox.style.top = '0';
+lightbox.style.left = '0';
+lightbox.style.width = '100%';
+lightbox.style.height = '100%';
+lightbox.style.background = 'rgba(0,0,0,0.9)';
+lightbox.style.display = 'none';
+lightbox.style.alignItems = 'center';
+lightbox.style.justifyContent = 'center';
+lightbox.style.zIndex = '9999';
+
+document.body.appendChild(lightbox);
+
+const img = document.createElement('img');
+img.style.maxWidth = '90%';
+img.style.maxHeight = '90%';
+img.style.border = '5px solid #c6a75e';
+lightbox.appendChild(img);
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+galleryImages.forEach(image => {
+  image.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    img.src = image.src;
+  });
+});
+</script>
+
+
+
+<!-- HERO SECTION -->
+<section style="position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;overflow:hidden">
+<video autoplay muted loop playsinline style="position:absolute;width:100%;height:100%;object-fit:cover">
+<source src="hero.mp4" type="video/mp4">
+</video>
+<div style="position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6))"></div>
+<div style="position:relative;z-index:2;max-width:800px;padding:20px">
+<h1 style="font-size:54px;margin-bottom:10px">Deepak Studio</h1>
+<h2 style="color:#c6a75e;margin-bottom:10px">Luxury Wedding Photography in Lucknow</h2>
+<p style="font-size:20px;margin-bottom:30px">Capturing Emotions. Creating Timeless Memories.</p>
+<a class="btn" href="#contact">Check Availability</a>
+<a class="btn" style="margin-left:15px;background:#c6a75e" href="https://wa.me/918081721313">WhatsApp Now</a>
+</div>
+</section>
+
+<!-- TRUST SECTION -->
+<section style="padding:50px 20px;text-align:center">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;max-width:1000px;margin:auto">
+<div>⭐ <b>500+ Weddings Covered</b></div>
+<div>⭐ <b>8+ Years Experience</b></div>
+<div>⭐ <b>4K Cinematic Films</b></div>
+<div>⭐ <b>Drone & Creative Team</b></div>
+</div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section style="padding:80px 20px;background:#f8f6ef">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center;max-width:1100px;margin:auto">
+<img src="about.jpg" style="width:100%;border-radius:10px">
+<div>
+<h2>About Deepak Studio</h2>
+<p>Deepak Studio is one of the most trusted wedding photography and cinematic film studios in Lucknow. We specialize in candid photography, cinematic wedding films, and luxury album design.</p>
+<a class="btn" href="#gallery">View Our Work</a>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding:80px 20px;text-align:center">
+<h2 style="margin-bottom:40px">Our Premium Services</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;max-width:1100px;margin:auto">
+<div style="padding:30px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)">
+<h3>💍 Wedding Photography</h3>
+<p>Elegant candid wedding photography capturing every emotion and beautiful moment.</p>
+<a class="btn">Learn More</a>
+</div>
+<div style="padding:30px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)">
+<h3>🎥 Cinematic Wedding Films</h3>
+<p>Luxury cinematic storytelling with emotional highlights and full wedding films.</p>
+<a class="btn">Learn More</a>
+</div>
+<div style="padding:30px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)">
+<h3>🌸 Pre Wedding Shoots</h3>
+<p>Creative romantic pre wedding shoots at stunning locations.</p>
+<a class="btn">Learn More</a>
+</div>
+</div>
+</section>
+
+<!-- FILMS SECTION -->
+<section style="background:#111;color:white;padding:80px 20px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;max-width:1100px;margin:auto;align-items:center">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+<div>
+<h2 style="color:#c6a75e">Cinematic Wedding Films</h2>
+<p>✔ 4K Ultra HD Quality</p>
+<p>✔ Emotional Storytelling</p>
+<p>✔ Drone Coverage</p>
+<p>✔ Highlight + Full Film</p>
+<a class="btn" style="background:#c6a75e">Watch More Films</a>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding:80px 20px;text-align:center">
+<h2>Client Love</h2>
+<p>⭐⭐⭐⭐⭐ "Best wedding photographer in Lucknow." – Riya & Aman</p>
+<p>⭐⭐⭐⭐⭐ "Amazing cinematic wedding film." – Neha & Rahul</p>
+<p>⭐⭐⭐⭐⭐ "Professional team and beautiful photos." – Priya & Karan</p>
+</section>
+
+<!-- CTA SECTION -->
+<section style="background:#111;color:#c6a75e;text-align:center;padding:80px 20px">
+<h2>Your Wedding Date is Limited. Secure It Now.</h2>
+<br>
+<a class="btn">Check Date Availability</a>
+<a class="btn" style="margin-left:15px;background:#c6a75e">Get Custom Quote</a>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#000;color:white;padding:40px 20px;text-align:center">
+<p>📞 8081721313</p>
+<p>📍 Lucknow</p>
+<p>
+<a href="https://www.instagram.com/deepakstudio_lko" style="color:#c6a75e">Instagram</a> |
+<a href="https://wa.me/918081721313" style="color:#c6a75e">WhatsApp</a> |
+<a href="https://www.youtube.com/channel/UCUGYp_EltzQQwLlEA8GQ0tg" style="color:#c6a75e">YouTube</a>
+</p>
+</footer>
+
+
+
+<!-- INSTAGRAM FEED -->
+<section style="text-align:center;padding:80px 10%;background:#faf7ef">
+<h2 style="margin-bottom:40px">Follow Our Weddings on Instagram</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+<img src="insta1.jpg" style="width:100%;border-radius:8px">
+<img src="insta2.jpg" style="width:100%;border-radius:8px">
+<img src="insta3.jpg" style="width:100%;border-radius:8px">
+<img src="insta4.jpg" style="width:100%;border-radius:8px">
+</div>
+<br>
+<a class="btn gold-btn" href="https://www.instagram.com/deepakstudio_lko">View Instagram</a>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section style="text-align:center;padding:80px 10%">
+<h2>Google Reviews</h2>
+<p>⭐⭐⭐⭐⭐ 4.9 Rating from Happy Couples</p>
+<p>"Best wedding photographer in Lucknow. Amazing team and cinematic videos."</p>
+<a class="btn gold-btn" href="#">Read All Reviews</a>
+</section>
+
+<!-- CONTACT / BOOKING FORM (NO CALENDLY) -->
+<section style="background:#f7f4ea;padding:80px 10%">
+<h2 style="text-align:center;margin-bottom:40px">Check Wedding Date Availability</h2>
+<form style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px">
+<input type="text" placeholder="Your Name" required style="padding:12px;border-radius:6px;border:1px solid #ccc">
+<input type="tel" placeholder="Phone Number" required style="padding:12px;border-radius:6px;border:1px solid #ccc">
+<input type="date" style="padding:12px;border-radius:6px;border:1px solid #ccc">
+<textarea placeholder="Tell us about your wedding" style="padding:12px;border-radius:6px;border:1px solid #ccc"></textarea>
+<button class="btn gold-btn" type="submit">Send Inquiry</button>
+</form>
+</section>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/918081721313" style="position:fixed;bottom:25px;right:25px;background:#c6a75e;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,.3);z-index:999">WhatsApp</a>
 
 </body>
 </html>
