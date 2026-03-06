@@ -81,7 +81,6 @@ animation:heroSlider 20s infinite;
 
 .hero-overlay{
 position:relative;
-background:rgba(245,241,234,0.75);
 padding:40px 50px;
 border-radius:10px;
 color:#3a332b
@@ -216,6 +215,81 @@ border-radius:8px;
 
 .gallery img{cursor:pointer}
 
+
+
+/* Page Loader */
+#loader{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:#f5f1ea;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:3000;
+font-family:'Playfair Display',serif;
+font-size:28px;
+color:#3a332b;
+letter-spacing:2px;
+}
+
+/* Review Slider */
+.review-slider{
+max-width:800px;
+margin:40px auto;
+text-align:center;
+}
+
+.review{
+display:none;
+font-size:18px;
+line-height:1.6;
+color:#5a5147;
+}
+
+.review.active{display:block}
+
+.review strong{
+display:block;
+margin-top:10px;
+font-size:16px;
+color:#3a332b;
+}
+
+
+
+/* Responsive image sizing for phone + computer */
+img{max-width:100%;height:auto}
+
+.hero-slide{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.hero{
+min-height:100vh
+}
+
+.gallery img{
+width:100%;
+height:100%;
+object-fit:cover;
+aspect-ratio:4/5
+}
+
+.logo img{
+height:40px;
+max-height:40px
+}
+
+@media(max-width:768px){
+.hero-overlay{padding:25px}
+.hero h1{font-size:32px}
+.gallery img{aspect-ratio:3/4}
+.logo img{height:32px}
+}
+
 </style>
 
 
@@ -282,6 +356,8 @@ border-radius:8px;
 <img src="singelprint.jpg" class="hero-slide" alt="Deepak Studio Couple">
 <img src="02.jpg" class="hero-slide" alt="Deepak Studio Bride Groom">
 <img src="5.jpg" class="hero-slide" alt="Deepak Studio Bridal">
+<img src="15.jpg" class="hero-slide" alt="Deepak Studio Wedding Highlight">
+<img src="25.jpg" class="hero-slide" alt="Deepak Studio Couple Portrait">
 
 <div class="hero-overlay">
 <h1 style="font-family:Playfair Display;letter-spacing:2px">Deepak Studio</h1>
@@ -352,6 +428,12 @@ Deepak Studio captures timeless wedding stories with cinematic style and eleganc
 <img src="singelprint.jpg" alt="Deepak Studio Wedding Photo 2">
 <img src="02.jpg" alt="Deepak Studio Wedding Photo 3">
 <img src="5.jpg" alt="Deepak Studio Wedding Photo 4">
+<img src="15.jpg" alt="Deepak Studio Wedding Photo 5">
+<img src="2.jpg" alt="Deepak Studio Wedding Photo 6">
+<img src="3.jpg" alt="Deepak Studio Wedding Photo 7">
+<img src="25.jpg" alt="Deepak Studio Wedding Photo 8">
+<img src="20.jpg" alt="Deepak Studio Wedding Photo 9">
+<img src="29.jpg" alt="Deepak Studio Wedding Photo 10">
 </div>
 
 <section class="section" id="video">
@@ -420,23 +502,95 @@ Deepak Studio is one of the best wedding photographers in Lucknow specializing i
 
 
 <div class="lightbox" id="lightbox">
+<button id="prevBtn" style="position:absolute;left:30px;font-size:30px;background:none;border:none;color:white;cursor:pointer">❮</button>
 <img src="" alt="Preview">
+<button id="nextBtn" style="position:absolute;right:30px;font-size:30px;background:none;border:none;color:white;cursor:pointer">❯</button>
 </div>
 
 <script>
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=lightbox.querySelector('img');
+const images=document.querySelectorAll('.gallery img');
+const nextBtn=document.getElementById('nextBtn');
+const prevBtn=document.getElementById('prevBtn');
 
-document.querySelectorAll('.gallery img').forEach(img=>{
+let currentIndex=0;
+
+images.forEach((img,i)=>{
  img.addEventListener('click',()=>{
-  lightboxImg.src=img.src;
+  currentIndex=i;
+  showImage();
   lightbox.classList.add('active');
  });
+});
+
+function showImage(){
+ lightboxImg.src=images[currentIndex].src;
+}
+
+nextBtn.addEventListener('click',(e)=>{
+ e.stopPropagation();
+ currentIndex=(currentIndex+1)%images.length;
+ showImage();
+});
+
+prevBtn.addEventListener('click',(e)=>{
+ e.stopPropagation();
+ currentIndex=(currentIndex-1+images.length)%images.length;
+ showImage();
 });
 
 lightbox.addEventListener('click',()=>{
  lightbox.classList.remove('active');
 });
+</script>
+
+
+
+<!-- Customer Reviews -->
+<section class="section" style="background:#faf7f2">
+<h2>Client Reviews</h2>
+<div class="review-slider">
+
+<div class="review active">
+"Amazing photography and beautiful wedding album. Highly recommended Deepak Studio!"
+<strong>— Riya & Aman</strong>
+</div>
+
+<div class="review">
+"Professional team and stunning photos. Our wedding memories look magical."
+<strong>— Pooja & Rahul</strong>
+</div>
+
+<div class="review">
+"Best wedding photographer in Lucknow. Cinematic film was absolutely perfect."
+<strong>— Neha & Karan</strong>
+</div>
+
+</div>
+</section>
+
+<!-- Page Loader -->
+<div id="loader">Deepak Studio</div>
+
+<script>
+
+// Loader
+window.addEventListener('load',function(){
+ const loader=document.getElementById('loader');
+ loader.style.display='none';
+});
+
+// Review slider
+let reviews=document.querySelectorAll('.review');
+let index=0;
+
+setInterval(()=>{
+ reviews[index].classList.remove('active');
+ index=(index+1)%reviews.length;
+ reviews[index].classList.add('active');
+},4000);
+
 </script>
 
 </body>
