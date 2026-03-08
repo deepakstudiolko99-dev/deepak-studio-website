@@ -7,11 +7,11 @@
 
 <title>Deepak Studio | Best Wedding Photographer in Lucknow</title>
 
-<meta name="description" content="Deepak Studio - Best Wedding Photographer in Lucknow. Cinematic wedding films, luxury wedding albums, pre wedding shoots and candid wedding photography.">
-<meta name="keywords" content="Deepak Studio Lucknow, Wedding Photographer Lucknow, Pre Wedding Shoot Lucknow, Best Wedding Photographer Lucknow">
+<meta name="description" content="Deepak Studio - Best Wedding Photographer in Lucknow. Luxury wedding photography, cinematic wedding films and pre wedding shoots.">
+<meta name="keywords" content="Wedding Photographer Lucknow, Deepak Studio Lucknow, Pre Wedding Shoot Lucknow, Best Photographer Lucknow">
 <meta name="author" content="Deepak Studio">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,7 +19,7 @@
 
 body{
 font-family:Poppins;
-background:#f7f2ea;
+background:#f6f1ea;
 color:#333;
 }
 
@@ -29,7 +29,7 @@ header{
 position:fixed;
 top:0;
 width:100%;
-background:white;
+background:#fff;
 padding:15px 8%;
 display:flex;
 justify-content:space-between;
@@ -45,7 +45,14 @@ font-family:Playfair Display;
 font-size:22px;
 }
 
-.logo img{height:40px}
+.logo img{height:45px}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
 
 /* HERO */
 
@@ -77,15 +84,15 @@ animation:slider 25s infinite;
 
 @keyframes slider{
 0%{opacity:0}
-5%{opacity:1}
-20%{opacity:1}
-25%{opacity:0}
+10%{opacity:1}
+30%{opacity:1}
+40%{opacity:0}
 100%{opacity:0}
 }
 
 .hero-text{
 position:relative;
-z-index:10;
+z-index:2;
 }
 
 .hero h1{
@@ -95,7 +102,6 @@ font-size:60px;
 
 .hero p{
 letter-spacing:3px;
-margin-top:10px;
 }
 
 /* ABOUT */
@@ -117,14 +123,14 @@ border-radius:10px;
 .about h2{
 font-family:Playfair Display;
 font-size:40px;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 /* GALLERY */
 
 .gallery{
-background:#efe6db;
 padding:100px 8%;
+background:#efe6db;
 text-align:center;
 }
 
@@ -143,10 +149,35 @@ gap:15px;
 .gallery-grid img{
 width:100%;
 border-radius:8px;
+transition:0.4s;
 cursor:pointer;
 }
 
-/* VIDEO SECTION */
+.gallery-grid img:hover{
+transform:scale(1.08);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+/* STORIES */
 
 .stories{
 background:black;
@@ -165,18 +196,17 @@ margin-top:40px;
 .video-grid iframe{
 width:100%;
 height:300px;
-border-radius:10px;
 }
 
 /* TESTIMONIAL */
 
 .testimonial{
-background:white;
 padding:100px 8%;
+background:white;
 text-align:center;
 }
 
-.review-box{
+.review-card{
 max-width:700px;
 margin:auto;
 font-style:italic;
@@ -190,50 +220,51 @@ padding:100px 8%;
 text-align:center;
 }
 
-.booking form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
+.booking input,.booking textarea{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:1px solid #ddd;
 }
 
-.booking input,.booking textarea{
-padding:12px;
-border:1px solid #ccc;
+.booking button{
+padding:12px 25px;
+background:black;
+color:white;
+border:none;
 }
 
 /* INSTAGRAM */
 
 .instagram{
-padding:80px 0;
-background:white;
-overflow:hidden;
+padding:100px 8%;
+text-align:center;
 }
 
-.insta-track{
-display:flex;
-gap:20px;
-animation:scroll 30s linear infinite;
+.instagram-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+margin-top:30px;
 }
 
-.insta-track img{
-height:250px;
-border-radius:8px;
+.instagram-grid img{
+width:100%;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
-}
-
-/* SERVICES + CONTACT */
+/* CONTACT */
 
 .contact{
 background:black;
 color:white;
 padding:80px;
 text-align:center;
+}
+
+.contact a{
+color:white;
+margin:10px;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -249,42 +280,23 @@ padding:20px;
 
 .whatsapp{
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
-padding:15px;
-border-radius:50%;
+padding:14px 18px;
+border-radius:50px;
 text-decoration:none;
 }
 
-/* LIGHTBOX */
-
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-}
+/* MOBILE */
 
 @media(max-width:900px){
 
 .gallery-grid{grid-template-columns:repeat(2,1fr)}
-
-.about{grid-template-columns:1fr}
-
 .video-grid{grid-template-columns:1fr}
-
+.instagram-grid{grid-template-columns:repeat(2,1fr)}
+.about{grid-template-columns:1fr}
 .hero h1{font-size:35px}
 
 }
@@ -301,6 +313,12 @@ max-height:90%;
 <img src="logo.png">
 Deepak Studio
 </div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
 
 </header>
 
@@ -334,7 +352,7 @@ Deepak Studio
 <h2>About Deepak Studio</h2>
 
 <p>
-Deepak Studio is one of the leading wedding photographers in Lucknow capturing timeless love stories with cinematic style.
+Deepak Studio is one of the best wedding photographers in Lucknow known for cinematic wedding films and luxury wedding photography.
 </p>
 
 </div>
@@ -343,21 +361,21 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 <!-- GALLERY -->
 
-<section class="gallery">
+<section class="gallery" id="gallery">
 
-<h2>Luxury Wedding Gallery</h2>
+<h2>Premium Wedding Gallery</h2>
 
 <div class="gallery-grid">
 
-<img src="1.jpg">
-<img src="2.jpg">
-<img src="3.jpg">
-<img src="4.jpg">
-<img src="5.jpg">
-<img src="6.jpg">
-<img src="7.jpg">
-<img src="8.jpg">
-<img src="9.jpg">
+<img src="01.jpg">
+<img src="02.jpg">
+<img src="03.jpg">
+<img src="04.jpg">
+<img src="05.jpg">
+<img src="06.jpg">
+<img src="07.jpg">
+<img src="08.jpg">
+<img src="09.jpg">
 <img src="10.jpg">
 <img src="11.jpg">
 <img src="12.jpg">
@@ -382,8 +400,15 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 <div class="video-grid">
 
+<div>
 <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4"></iframe>
+<p>Ashutosh & Riya</p>
+</div>
+
+<div>
 <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4"></iframe>
+<p>Alok & Mamta</p>
+</div>
 
 </div>
 
@@ -395,10 +420,10 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 <h2>Client Testimonials</h2>
 
-<div class="review-box">
+<div class="review-card">
 
 <p>
-“Best wedding photographer in Lucknow. Cinematic wedding film was amazing.”
+"Best wedding photographer in Lucknow. Amazing cinematic wedding film."
 </p>
 
 <strong>Riya & Aman</strong>
@@ -415,8 +440,10 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 <form>
 
-<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Name">
+
 <input type="tel" placeholder="Phone">
+
 <textarea placeholder="Event Details"></textarea>
 
 <button>Send Request</button>
@@ -429,13 +456,9 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 <section class="instagram">
 
-<div class="insta-track">
+<h2>Follow Our Wedding Story</h2>
 
-<img src="01.jpg">
-<img src="02.jpg">
-<img src="03.jpg">
-<img src="04.jpg">
-<img src="05.jpg">
+<div class="instagram-grid">
 
 <img src="01.jpg">
 <img src="02.jpg">
@@ -445,31 +468,37 @@ Deepak Studio is one of the leading wedding photographers in Lucknow capturing t
 
 </div>
 
+<br>
+
+<a href="https://www.instagram.com/deepakstudio_lko">View More</a>
+
 </section>
 
 <!-- CONTACT -->
 
-<section class="contact">
+<section class="contact" id="contact">
 
 <h2>Contact Deepak Studio</h2>
 
-<p>📍 Sector 11 Takrohi Indira Nagar Lucknow India</p>
 <p>📞 9369999439 | 8081721313</p>
 
-<p>
-<a href="https://www.instagram.com/deepakstudio_lko" style="color:white">Instagram</a> |
-<a href="https://www.youtube.com/channel/UCUGYp_EltzQQwLlEA8GQ0tg" style="color:white">YouTube</a>
-</p>
+<p>📍 Sector-11 Takrohi Indira Nagar Lucknow India</p>
+
+<p>📧 deepakstudiolko99@gmail.com</p>
+
+<a href="https://www.instagram.com/deepakstudio_lko">Instagram</a>
+
+<a href="https://www.youtube.com/channel/UCUGYp_EltzQQwLlEA8GQ0tg">YouTube</a>
 
 </section>
 
 <footer>
 
-© 2026 Deepak Studio All Rights Reserved
+© 2026 Deepak Studio. All Rights Reserved.
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918081721313">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/919369999439">WhatsApp</a>
 
 </body>
 </html>
